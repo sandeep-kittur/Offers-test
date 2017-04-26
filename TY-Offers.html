@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<title>Offers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<link rel="icon"  type="image/png"  href="img/myfavicon.png">
+
+<style>
+.w3-droid {
+  font-family: "Droid Sans", Helvetica, Sans-serif;
+}
+</style>
+
+<body clas="w3-droid" style="background-color:#e1e1e1">
+
+<div class="w3-bar w3-green w3-top">
+
+  <div class="w3-bar-item w3-left" style="position:relative; top:3px">
+    <a href="#" class="w3-button w3-hover-none"><strong>TY</strong></a>
+  </div>
+
+  <div class="w3-bar-item w3-display-topmiddle">
+    <h5>Offers</h5>
+  </div>
+
+  <div class="w3-dropdown-click w3-right w3-hover-none">
+    <button class="w3-button w3-green w3-hover-none" onclick="offerFunction()"><i class="fa fa fa-filter" style="position:relative; top:10px"></i></button>
+    <div id="filter" class="w3-dropdown-content w3-top w3-bar-block w3-card-4 w3-white w3-display-topright w3-padding w3-bottombar w3-border-green" style="position:fixed; width:400px; top:52px">
+        <p><strong>Filters</strong></p>
+        <form id="myForm">
+          <p class="w3-text-green">Type</p>
+          <input class="w3-check" type="checkbox" style="cursor:pointer"> <lable class="w3-margin-right"> Bus </lable>
+
+          <input class="w3-check" type="checkbox" style="cursor:pointer"><lable class="w3-margin-right"> Hotel </lable>
+
+          <input class="w3-check" type="checkbox" style="cursor:pointer"><lable class="w3-margin-right"> Tour </lable>
+
+          <input class="w3-check" type="checkbox" style="cursor:pointer"><lable> Activity </lable>
+
+          <p class="w3-text-green">Price range</p>
+          <div class="w3-row">
+          <div class="w3-half">
+            <input class="w3-input w3-border" placeholder="Min price" type="number">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" placeholder="Max Price" type="number">
+          </div>
+        </div>
+        <p class="w3-text-green">Usage</p>
+        <input class="w3-radio w3-padding" type="radio" name="usage" value="single" style="cursor:pointer">
+          <lable class="w3-margin-right"> Single </lable>
+        <input class="w3-radio w3-padding" type="radio" name="usage" value="multiple" style="cursor:pointer">
+        <lable> Multiple </lable>
+      </form>
+        <br>
+        <div class="w3-bar">
+          <button onclick="applyFunction()" value="Apply filters" class="w3-button w3-orange w3-center w3-hover-blue w3-text-white" style="">Apply</button>
+          <button onclick="resetFunction()" value="Reset form" class="w3-button w3-white w3-border w3-border-red w3-center w3-hover-red" style="">Reset</button>
+        </div><br>
+
+    </div>
+  </div>
+
+</div>
+
+  <div class="w3-container w3-padding w3-white w3-center" style="width:100%; height:120px">
+    <p class="w3-padding-16"><h4>More savings for every Booking!</h4>
+    </p>
+  </div>
+
+<!-- First row of offers -->
+
+<div class="w3-row-padding">
+  <!-- Offers 1st cards start here -->
+  <div class="w3-third w3-section">
+    <div class="w3-white w3-hover-shadow">
+        <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>200 Off</h4>
+          <div class="w3-container">
+            <p>Bus fare above Rs.2500<br>
+            Get movie voucher worth Rs.100 (Jio Money)</p>
+          </div>
+
+          <div class="w3-padding">
+            <h5>Coupon Code: <b id="p1">TYSHADE200</b></h5>
+          </div>
+
+            <div class="w3-section w3-round w3-padding">
+              <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+              <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-display-left w3-animate-bottom">
+                  <div class="w3-container">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <p>Coupon code has been copied to clipboard</p>
+                    <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+              <button onclick="myFunction('Offer1')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                View Offer details
+              </button>
+
+              <div id="Offer1" class="w3-hide">
+                <ul class="w3-small w3-hoverable">
+                  <li>Flat Rs.200 off</li>
+                  <li>Two times per user</li>
+                  <li>Bus fare should be above Rs 2500</li>
+                  <li>Cashback as per selected wallet</li>
+                  <li>Valid till 1st May-2017</li>
+                  <li>Not valid for state RTCs</li>
+                </ul>
+              </div>
+              <br>
+            </div>
+          </div>
+
+      <div class="w3-third w3-section">
+        <div class="w3-hover-shadow w3-white">
+            <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>125 Off</h4>
+              <div class="w3-container">
+                <p>Bus fare above Rs.1500<br>
+                Get movie voucher worth Rs.100 (Jio Money)</p>
+              </div>
+
+              <div class="w3-padding">
+                <h5>Coupon Code: <b id="p2">TYSHADE125</b></h5>
+              </div>
+
+                <div class="w3-section w3-round w3-padding">
+                  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+                  <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                      <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <p>Coupon code has been copied to clipboard</p>
+                        <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                  <button onclick="myFunction('Offer2')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                    <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                    View Offer details
+                  </button>
+
+                  <div id="Offer2" class="w3-hide">
+                    <ul class="w3-small w3-hoverable">
+                      <li>Flat Rs.125 off</li>
+                      <li>Two times per user</li>
+                      <li>Bus fare should be above Rs 1500</li>
+                      <li>Cashback as per selected wallet</li>
+                      <li>Valid till 1st May-2017</li>
+                      <li>Not valid for state RTCs</li>
+                    </ul>
+                  </div>
+                  <br>
+                </div>
+
+
+          </div>
+
+          <div class="w3-third w3-section">
+            <div class="w3-hover-shadow w3-white">
+                <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>80 Off</h4>
+                  <div class="w3-container">
+                    <p>Bus fare above Rs.1000<br>
+                    Get movie voucher worth Rs.100 (Jio Money)</p>
+                  </div>
+
+                  <div class="w3-padding">
+                    <h5>Coupon Code: <b id="p3">TYSHADE80</b></h5>
+                  </div>
+
+                    <div class="w3-section w3-round w3-padding">
+                      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+                      <div id="id01" class="w3-modal">
+                        <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                          <div class="w3-container">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                            <p>Coupon code has been copied to clipboard</p>
+                            <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                      <button onclick="myFunction('Offer3')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                        <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                        View Offer details
+                      </button>
+
+                      <div id="Offer3" class="w3-hide">
+                        <ul class="w3-small w3-hoverable">
+                          <li>Flat Rs.80 off</li>
+                          <li>Two times per user</li>
+                          <li>Bus fare should be above Rs 1000</li>
+                          <li>Cashback as per selected wallet</li>
+                          <li>Valid till 1st May-2017</li>
+                          <li>Not valid for state RTCs</li>
+                        </ul>
+                      </div>
+                      <br>
+                    </div>
+
+
+              </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- Second row of offers -->
+
+<div class="w3-row-padding">
+  <!-- Offers 1st cards start here -->
+  <div class="w3-third w3-section">
+    <div class="w3-hover-shadow w3-white">
+        <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>60 Off</h4>
+          <div class="w3-container">
+            <p>Bus fare above Rs.800<br>
+            Get movie voucher worth Rs.100 (Jio Money)</p>
+          </div>
+
+          <div class="w3-padding">
+            <h5>Coupon Code: <b id="p4">TYSUN60</b></h5>
+          </div>
+
+            <div class="w3-section w3-round w3-padding">
+              <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+              <div id="id04" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                  <div class="w3-container">
+                    <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <p>Coupon code has been copied to clipboard</p>
+                    <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+              <button onclick="myFunction('Offer4')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                View Offer details
+              </button>
+
+              <div id="Offer4" class="w3-hide">
+                <ul class="w3-small w3-hoverable">
+                  <li>Flat Rs. 60 off</li>
+                  <li>Eight times per user</li>
+                  <li>Bus fare should be above Rs 800</li>
+                  <li>Cashback as per selected wallet</li>
+                  <li>Valid till 1st May-2017</li>
+                  <li>Not valid for state RTCs</li>
+                </ul>
+              </div>
+              <br>
+            </div>
+          </div>
+
+      <div class="w3-third w3-section">
+        <div class="w3-hover-shadow w3-white">
+            <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>40 Off</h4>
+              <div class="w3-container">
+                <p>Bus fare above Rs.600<br>
+                Get movie voucher worth Rs.100 (Jio Money)</p>
+              </div>
+
+              <div class="w3-padding">
+                <h5>Coupon Code: <b id="p5">TYSUN40</b></h5>
+              </div>
+
+                <div class="w3-section w3-round w3-padding">
+                  <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+                  <div id="id05" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                      <div class="w3-container">
+                        <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <p>Coupon code has been copied to clipboard</p>
+                        <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                  <button onclick="myFunction('Offer5')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                    <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                    View Offer details
+                  </button>
+
+                  <div id="Offer5" class="w3-hide">
+                    <ul class="w3-small w3-hoverable">
+                      <li>Flat Rs.40 off</li>
+                      <li>Eight times per user</li>
+                      <li>Bus fare should be above Rs 600</li>
+                      <li>Cashback as per selected wallet</li>
+                      <li>Valid till 1st May-2017</li>
+                      <li>Not valid for state RTCs</li>
+                    </ul>
+                  </div>
+                  <br>
+                </div>
+
+
+          </div>
+
+          <div class="w3-third w3-section">
+            <div class="w3-hover-shadow w3-white">
+                <h4 class="w3-padding w3-blue">Flat  <i class="fa fa-inr"></i>30 Off</h4>
+                  <div class="w3-container">
+                    <p>Bus fare above Rs.300<br>
+                    Get movie voucher worth Rs.100 (Jio Money)</p>
+                  </div>
+
+                  <div class="w3-padding">
+                    <h5>Coupon Code: <b id="p6">TYSUN30</b></h5>
+                  </div>
+
+                    <div class="w3-section w3-round w3-padding">
+                      <button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Copy Coupon Code</button>
+
+                      <div id="id06" class="w3-modal">
+                        <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                          <div class="w3-container">
+                            <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                            <p>Coupon code has been copied to clipboard</p>
+                            <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                      <button onclick="myFunction('Offer6')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                        <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                        View Offer details
+                      </button>
+
+                      <div id="Offer6" class="w3-hide">
+                        <ul class="w3-small w3-hoverable">
+                          <li>Flat Rs.30 off</li>
+                          <li>Eight times per user</li>
+                          <li>Bus fare should be above Rs 300</li>
+                          <li>Cashback as per selected wallet</li>
+                          <li>Valid till 1st May-2017</li>
+                          <li>Not valid for state RTCs</li>
+                        </ul>
+                      </div>
+                      <br>
+                    </div>
+
+
+              </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- Third row of offers -->
+
+<div class="w3-row-padding">
+  <!-- Offers 1st cards start here -->
+  <div class="w3-third w3-section">
+    <div class="w3-hover-shadow w3-white">
+        <h4 class="w3-padding w3-blue">Upto 50% off</h4>
+          <div class="w3-container">
+            <p>App only offer
+            </p>
+          </div>
+
+          <div class="w3-padding">
+            <h5><b id="p7">SURPRISE OFFER</b></h5>
+          </div>
+
+            <div class="w3-section w3-round w3-padding">
+              <button onclick="downloadApp()" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Download app</button>
+
+
+            </div>
+
+              <button onclick="myFunction('Offer7')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                View Offer details
+              </button>
+
+              <div id="Offer7" class="w3-hide">
+                <ul class="w3-small w3-hoverable">
+                  <li>Applicable only for App Bookings</li>
+                  <li>Valid after first booking</li>
+                  <li>Offer code through notification in app</li>
+                  <li>Only for logged in users</li>
+                  <li>Valid till 1st May-2017</li>
+                  <li>Not valid for state RTCs</li>
+                </ul>
+              </div>
+              <br>
+            </div>
+          </div>
+
+      <div class="w3-third w3-section">
+        <div class="w3-hover-shadow w3-white">
+            <h4 class="w3-padding w3-blue">Worth  <i class="fa fa-inr"></i>100 Off</h4>
+              <div class="w3-container">
+                <p>Use JIOMoney Wallet
+                </p>
+              </div>
+
+              <div class="w3-padding">
+                <h5><b id="p8">BOOKMYSHOW VOCUHER</b></h5>
+              </div>
+
+                <div class="w3-section w3-round w3-padding">
+                  <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-orange w3-round w3-text-white w3-hover-deep-orange" style="width:80%">Book now</button>
+
+                  <div id="id08" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-display-middle w3-animate-bottom">
+                      <div class="w3-container">
+                        <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <p>Coupon code has been copied to clipboard</p>
+                        <p><button class="w3-button w3-orange w3-round-large w3-text-white w3-hover-opacity" style="width:80%">Go to selected Offer</button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                  <button onclick="myFunction('Offer8')" class="w3-button w3-block w3-left-align w3-white w3-hover-pale-yellow">
+                    <i class="material-icons" style="position:relative; top:6px;">&#xE88E;</i>
+                    View Offer details
+                  </button>
+
+                  <div id="Offer8" class="w3-hide">
+                    <ul class="w3-small w3-hoverable">
+                      <li>Only one BMS Voucher is issued for each JioMoney wallet</li>
+                      <li>Minimum transaction of Rs.300</li>
+                      <li>Valid till 1st May-2017</li>
+                      <li>Voucher will be received in JioMoney wallet with in 2 working days</li>
+                      <li>Voucher valid for 30 days</li>
+                    </ul>
+                  </div>
+                  <br>
+                </div>
+
+
+          </div>
+
+              </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+function offerFunction(){
+    var x = document.getElementById("filter");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function applyFunction(){
+    window.location = 'TY-Offers.html'
+}
+
+function resetFunction(){
+    document.getElementById("myForm").reset();
+}
+
+function downloadApp(){
+  window.open("https://play.google.com/store/apps/details?id=com.travelyaari", '_blank');
+
+}
+
+</script>
+
+<footer class="w3-container w3-white w3-bottombar w3-border-green w3-center w3-hover-border-blue">
+  <h6>India's largest realtime ticket booking platform</h6>
+  <p><em>We are social</em><br>
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+  <i class="fa fa-twitter" aria-hidden="true"></i>
+  <i class="fa fa-google-plus" aria-hidden="true"></i>
+  <i class="fa fa-instagram" aria-hidden="true"></i></p>
+</footer>
+
+</body>
+</html>
